@@ -4,7 +4,8 @@ var allValue = {};
 
 
 var price = {
-    "m2": 20,
+    "m2": 75,
+    "height": 70
 };
 
 function setBtn() {
@@ -15,7 +16,7 @@ function setBtn() {
             setValue(setAtrib);
             outResult();
         });
-        btn[i].addEventListener('input', function (event) {
+        btn[i].addEventListener('click', function (event) {
             var target = event.target;
 
             if(target.className === 'range-calc range-area'){
@@ -28,7 +29,7 @@ function setBtn() {
                 var val2 = setArea(target);
                 var inpVal = document.querySelector('.input-height-value')
                 inpVal.value = val2;
-                allValue.heightPotolok = val2*price.m2; 
+                allValue.heightPotolok = val2 * price.height; 
             }
         });
     }    
@@ -64,7 +65,14 @@ function setValue(valueAtrib) {
 
 function typeHouse(event) {
     var target = event.target;
-    allValue.type = target.value;
+    var areaType = document.querySelector('.subtitle-area');
+    if(target.className == 'radio-calc set-tanhaus'){
+        areaType.innerHTML = "Площадь таунхауса/коттеджа (м2)";
+        allValue.type = target.value;
+    }else{
+        areaType.innerHTML = "Площадь квартиры (м2)";
+        allValue.type = target.value;
+    }
 
 }
 function viewHouse(event) {
