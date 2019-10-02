@@ -9,14 +9,34 @@ var price = {
 
 function setBtn() {
     for (var i = 0; i < btn.length; i++) {
-        btn[i].addEventListener('input', function (event) {
-            var event = event.target;
-            var setAtrib = event.getAttribute('name');
+        btn[i].addEventListener('click', function (event) {
+            var target = event.target;
+            var setAtrib = target.getAttribute('name');
             setValue(setAtrib);
             outResult();
         });
-    }
-    
+        btn[i].addEventListener('input', function (event) {
+            var target = event.target;
+
+            if(target.className === 'range-calc range-area'){
+                var val = setArea(target);
+                var inpVal = document.querySelector('.input-area-value')
+                inpVal.value = val;
+                allValue.area = val*price.m2; 
+            }
+            if(target.className == 'range-calc range-height'){
+                var val2 = setArea(target);
+                var inpVal = document.querySelector('.input-height-value')
+                inpVal.value = val2;
+                allValue.heightPotolok = val2*price.m2; 
+            }
+        });
+    }    
+}
+
+function setArea(e){
+    var s = e.value;
+    return s;
 }
 
 function setValue(valueAtrib) {
@@ -26,12 +46,6 @@ function setValue(valueAtrib) {
             break;
         case 'view-house':
             viewHouse(event);
-            break;
-        case 'apartament-area':
-            areaApartament(event);
-            break;
-        case 'ceiling-height':
-            valuesOut();
             break;
         case 'install-electrick':
             valuesOut();
@@ -58,18 +72,6 @@ function viewHouse(event) {
     allValue.view = target.value;
 
 }
-function areaApartament(event) {
-    var target = event.target;
-   
-    var inp = document.querySelector('.input-area-value');
-    inp.value = target.value; 
-    allValue.area = target.value * price.m2; 
-    allValue.area = parseFloat(allValue.area);
-    
-}
-
-
-
 
 
 
