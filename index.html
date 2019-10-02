@@ -1,0 +1,190 @@
+<html>
+<link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <title>калькулятор</title>
+    <script src="/calculator.js" defer></script>
+</head>
+
+<body>
+    <div id="container">
+        <div class="section section-1">
+            <div class="row-title">
+                <p class="row-title-number">01</p>
+                <h2>Укажите информацию об объекте</h2>
+            </div>
+            <div class="row">
+                <div class="row-item">
+                    <div class="subitem">
+                        <p class="subtitle">Тип Объекта</p>
+                        <input type="radio" class="radio-calc" id="radio-kv" value="7" name="type-house" >
+                        <label for="radio-kv">Квартира</label>
+                        <input type="radio" class="radio-calc set-tanhaus" id="radio-tanhaus" value="15"
+                            name='type-house'>
+                        <label for="radio-tanhaus">Коттедж/Таунхаус</label>
+                    </div>
+                </div>
+                <div class="row-vertical-line"></div>
+                <div class="row-item">
+                    <div class="subitem">
+                        <p class="subtitle">Вид Объекта</p>
+                        <input type="radio" class="radio-calc" id="radio-view" value="3" name='view-house'>
+                        <label for="radio-view">Вторичное жилье</label>
+                        <input type="radio" class="radio-calc" id="radio-view-new" value="0" name='view-house'>
+                        <label for="radio-view-new">Новостройка</label>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="section section-2">
+            <div class="row-title">
+                <p class="row-title-number">02</p>
+                <h2>Укажите объем работ</h2>
+            </div>
+            <div class="row">
+                <div class="row-item">
+                    <div class="subitem">
+                        <p class="subtitle subtitle-area">Площадь квартиры (м2)</p>
+                        <input type="number" class="input-job input-area-value" value="" placeholder="Ваша площадь"
+                            name="apartament-area">
+                        <input type="range" min="0" max="1000" class="range-calc" id="range-area" step="1" value="1"
+                            name="apartament-area">
+                    </div>
+                </div>
+                <div class="row-item">
+                    <div class="subitem">
+                        <p class="subtitle subtitle-area">Высота потолка(м)</p>
+                        <input type="number" class="input-job input-height-value" step="0.01" value=""
+                            placeholder="Ваша ваша высота потолка" name="ceiling-height">
+                        <input type="range" min="0" max="15" class="range-calc" id="range-area" step="0.01" value="0"
+                            name="ceiling-height">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="section section-3">
+            <div class="row-title">
+                <p class="row-title-number">03</p>
+                <h2>Укажите необходимые виды работ</h2>
+            </div>
+            <div class="row">
+                <div class="row-item">
+                    <div class="subitem">
+                        <p class="subtitle">Монтаж электропроводки </p>
+                        <input type="radio" class="radio-calc" id="radio-electrick-yes" value="7"
+                            name="install-electrick">
+                        <label for="radio-electrick-yes">ДА</label>
+                        <input type="radio" class="radio-calc set-no" id="radio-electrick-no" value="0"
+                            name='install-electrick'>
+                        <label for="radio-electrick-no">Нет</label>
+                    </div>
+                </div>
+                <div class="row-vertical-line"></div>
+                <div class="row-item">
+                    <div class="subitem">
+                        <p class="subtitle">Монтаж системы водоснабжения и канализации</p>
+                        <input type="radio" class="radio-calc" id="radio-water-yes" value="7" name="install-water">
+                        <label for="radio-water-yes">ДА</label>
+                        <input type="radio" class="radio-calc set-no" id="radio-water-no" value="0"
+                            name='install-water'>
+                        <label for="radio-water-no">Нет</label>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="row-item">
+                    <div class="subitem">
+                        <p class="subtitle">Замена радиаторов</p>
+                        <input type="radio" class="radio-calc" id="radio-radiator-yes" value="7"
+                            name="install-radiator">
+                        <label for="radio-radiator-yes">ДА</label>
+                        <input type="radio" class="radio-calc set-no" id="radio-radiator-no" value="0"
+                            name='install-radiator'>
+                        <label for="radio-radiator-no">Нет</label>
+                    </div>
+                </div>
+                <div class="row-vertical-line"></div>
+                <div class="row-item">
+                    <div class="subitem">
+                        <p class="subtitle">Установка дверей</p>
+                        <input type="radio" class="radio-calc" id="radio-doors-yes" value="7" name="install-doors">
+                        <label for="radio-doors-yes">ДА</label>
+                        <input type="radio" class="radio-calc set-no" id="radio-doors-no" value="0"
+                            name='install-doors'>
+                        <label for="radio-doors-no">Нет</label>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="row-item">
+                    <div class="subitem">
+                        <p class="subtitle">Отделка пола</p>
+                        <div class="subitem-inner">
+                            <input type="checkbox" class="checkbox-calc" id="checkbox-pol-one" value="7">
+                            <label for="checkbox-pol-one">Ламинат или паркетная доска</label>
+                            <input type="checkbox" class="checkbox-calc" id="checkbox-pol-two" value="7">
+                            <label for="checkbox-pol-two">Массивная доска</label>
+                            <input type="checkbox" class="checkbox-calc" id="checkbox-pol-three" value="7">
+                            <label for="checkbox-pol-three">Штучный паркет</label>
+                            <input type="checkbox" class="checkbox-calc" id="checkbox-pol-four" value="7">
+                            <label for="checkbox-pol-four">Плитка</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row-vertical-line"></div>
+                <div class="row-item">
+                    <div class="subitem">
+                        <p class="subtitle">Отделка стен</p>
+                        <div class="subitem-inner">
+                            <input type="checkbox" class="checkbox-calc" id="checkbox-sten-one" value="7">
+                            <label for="checkbox-sten-one">Обои(флизелин/винил)</label>
+                            <input type="checkbox" class="checkbox-calc" id="checkbox-sten-two" value="7">
+                            <label for="checkbox-sten-two">Обои бумажные</label>
+                            <input type="checkbox" class="checkbox-calc" id="checkbox-sten-three" value="7">
+                            <label for="checkbox-sten-three">Обои под окрас</label>
+                            <input type="checkbox" class="checkbox-calc" id="checkbox-sten-four" value="7">
+                            <label for="checkbox-sten-four">Окрас стен</label>
+                            <input type="checkbox" class="checkbox-calc" id="checkbox-sten-five" value="7">
+                            <label for="checkbox-sten-five">Декоративные покрытия (декоративная штукатурка, венецианская
+                                штукатурка, прочее)</label>
+                            <input type="checkbox" class="checkbox-calc" id="checkbox-sten-six" value="7">
+                            <label for="checkbox-sten-six">Керамическая плитка или декоративный камень</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row-vertical-line"></div>
+                <div class="row-item">
+                    <div class="subitem">
+                        <p class="subtitle">Отделка пола</p>
+                        <div class="subitem-inner">
+                            <input type="checkbox" class="checkbox-calc" id="checkbox-pol-one" value="7">
+                            <label for="checkbox-pol-one">Ламинат или паркетная доска</label>
+                            <input type="checkbox" class="checkbox-calc" id="checkbox-pol-two" value="7">
+                            <label for="checkbox-pol-two">Массивная доска</label>
+                            <input type="checkbox" class="checkbox-calc" id="checkbox-pol-three" value="7">
+                            <label for="checkbox-pol-three">Штучный паркет</label>
+                            <input type="checkbox" class="checkbox-calc" id="checkbox-pol-four" value="7">
+                            <label for="checkbox-pol-four">Плитка</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-footer-calc">
+            <div class="footer-calc-item">
+                <p>Ориентировочная стоимость ремонта</p>
+                <div class="calc-item-coast">0 руб.</div>
+            </div>
+            <div class="footer-calc-item">
+                <a href="#">Получить смету</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
