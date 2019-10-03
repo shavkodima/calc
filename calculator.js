@@ -1,12 +1,15 @@
 var btn = document.querySelectorAll('.subitem');
 var out = document.querySelector('.calc-item-coast');
+var inputAre = document.querySelector('.input-area-value');
+var optionValue = 0;
 var allValue = {};
+var settingHouse = {};
 
-
-var price = {
-    "m2": 75,
-    "height": 70
-};
+inputAre.addEventListener('input', function(event){
+    var target = event.target;
+    settingHouse.area = target.value;
+    outResult();
+})
 
 function setBtn() {
     for (var i = 0; i < btn.length; i++) {
@@ -16,26 +19,11 @@ function setBtn() {
             setValue(setAtrib);
             outResult();
         });
-        btn[i].addEventListener('click', function (event) {
-            var target = event.target;
 
-            if(target.className === 'range-calc range-area'){
-                var val = setArea(target);
-                var inpVal = document.querySelector('.input-area-value')
-                inpVal.value = val;
-                allValue.area = val*price.m2; 
-            }
-            if(target.className == 'range-calc range-height'){
-                var val2 = setArea(target);
-                var inpVal = document.querySelector('.input-height-value')
-                inpVal.value = val2;
-                allValue.heightPotolok = val2 * price.height; 
-            }
-        });
-    }    
+    }
 }
 
-function setArea(e){
+function setArea(e) {
     var s = e.value;
     return s;
 }
@@ -48,48 +36,78 @@ function setValue(valueAtrib) {
         case 'view-house':
             viewHouse(event);
             break;
+        case 'option-job':
+            optionJob(event);
+            break;
         case 'install-electrick':
-            valuesOut();
-            break;
-        case 'install-water':
-            valuesOut();
-            break;
-        case 'install-radiator':
-            valuesOut();
+            installElectrick(event);
             break;
         case 'install-doors':
-            valuesOut();
+            installDoors(event);
             break;
-    }
+            case 'install-radiator':
+            installRadiator(event);
+            break;
 }
-
+}
 function typeHouse(event) {
     var target = event.target;
-    var areaType = document.querySelector('.subtitle-area');
-    if(target.className == 'radio-calc set-tanhaus'){
-        areaType.innerHTML = "Площадь таунхауса/коттеджа (м2)";
-        allValue.type = target.value;
-    }else{
-        areaType.innerHTML = "Площадь квартиры (м2)";
-        allValue.type = target.value;
+    var radiator = document.getElementById('radio-radiator-yes');
+    var radiatorTitle = document.querySelector('.subtitle-radiator');
+    if (target.className == 'radio-calc set-tanhaus') {
+        radiatorTitle.innerHTML = "Монтаж системы отопления";
+        radiator.checked = false;
+        radiator.setAttribute('value', '1000');
+        allValue.radiator = '0';
+    } else {
+        radiatorTitle.innerHTML = "Замена радиаторов";
+        radiator.checked = false;
+        radiator.setAttribute('value', '100');
+        allValue.radiator = '0';
     }
-
+    allValue.type = target.value;
 }
+
 function viewHouse(event) {
     var target = event.target;
     allValue.view = target.value;
+    return;
+}
+function installElectrick(event) {
+    var target = event.target;
+    allValue.electrick = target.value;
+    return;
+}
+function installDoors(event) {
+    var target = event.target;
+    allValue.doors = target.value;
+    return;
+}
+function installRadiator(event) {
+    var target = event.target;
+    allValue.radiator = target.value;
+    return;
+}
 
+function optionJob(event) {
+    var target = event.target;
+    if (target.checked) {
+        optionValue += parseFloat(target.value);
+    } else {
+        optionValue -= target.value
+    }
+    allValue.option = optionValue;
+    return;
 }
 
 
 
 
 function outResult() {
-    var res = 0;
+    var result = 0;
     for (var key in allValue) {
-        res += parseFloat(allValue[key]);
+        result += parseFloat(allValue[key]);
     }
-    out.innerHTML =  res    + ' руб.';
-    
+    out.innerHTML =  result *settingHouse.area  + ' руб. ';
 }
 setBtn();

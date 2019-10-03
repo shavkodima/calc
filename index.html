@@ -17,10 +17,9 @@
                 <div class="row-item">
                     <div class="subitem">
                         <p class="subtitle">Тип Объекта</p>
-                        <input type="radio" class="radio-calc" id="radio-kv" value="7" name="type-house" >
+                        <input type="radio" class="radio-calc" id="radio-kv" value="2150" name="type-house" >
                         <label for="radio-kv">Квартира</label>
-                        <input type="radio" class="radio-calc set-tanhaus" id="radio-tanhaus" value="100"
-                            name='type-house'>
+                        <input type="radio" class="radio-calc set-tanhaus" id="radio-tanhaus" value="2200" name='type-house'>
                         <label for="radio-tanhaus">Коттедж/Таунхаус</label>
                     </div>
                 </div>
@@ -28,7 +27,7 @@
                 <div class="row-item">
                     <div class="subitem">
                         <p class="subtitle">Вид Объекта</p>
-                        <input type="radio" class="radio-calc" id="radio-view" value="17" name='view-house'>
+                        <input type="radio" class="radio-calc" id="radio-view" value="500" name='view-house'>
                         <label for="radio-view">Вторичное жилье</label>
                         <input type="radio" class="radio-calc" id="radio-view-new" value="0" name='view-house'>
                         <label for="radio-view-new">Новостройка</label>
@@ -46,17 +45,14 @@
                 <div class="row-item">
                     <div class="subitem">
                         <p class="subtitle subtitle-area">Площадь квартиры (м2)</p>
-                        <input type="number" class="input-job input-area-value" value="" placeholder="Ваша площадь"
-                            name="11">
-                        <input type="range" min="0" max="100" class="range-calc range-area" id="range-area" step="1" value="1"
-                           name="11" >
+                        <input type="number" class="input-job input-area-value" value="" placeholder="Ваша площадь" >
+                        <input type="range" min="0" max="100" class="range-calc range-area" id="range-area" step="1" value="0">
                     </div>
                 </div>
                 <div class="row-item">
                     <div class="subitem">
                         <p class="subtitle">Высота потолка(м)</p>
-                        <input type="number" class="input-job input-height-value" step="0.01" value=""
-                            placeholder="Ваша ваша высота потолка" >
+                        <input type="number" class="input-job input-height-value" step="0.01" value="" placeholder="Ваша ваша высота потолка" >
                         <input type="range" min="0" max="15" class="range-calc range-height" id="range-area" step="0.01" value="0"
                             >
                     </div>
@@ -73,11 +69,9 @@
                 <div class="row-item">
                     <div class="subitem">
                         <p class="subtitle">Монтаж электропроводки </p>
-                        <input type="radio" class="radio-calc" id="radio-electrick-yes" value="7"
-                            name="install-electrick">
-                        <label for="radio-electrick-yes">ДА</label>
-                        <input type="radio" class="radio-calc set-no" id="radio-electrick-no" value="0"
-                            name='install-electrick'>
+                        <input type="radio" class="radio-calc" id="radio-electrick-yes" value="1500"  name="install-electrick">
+                        <label for="radio-electrick-yes" >ДА</label>
+                        <input type="radio" class="radio-calc set-no" id="radio-electrick-no" value="0" name='install-electrick'>
                         <label for="radio-electrick-no">Нет</label>
                     </div>
                 </div>
@@ -85,11 +79,11 @@
                 <div class="row-item">
                     <div class="subitem">
                         <p class="subtitle">Монтаж системы водоснабжения и канализации</p>
-                        <input type="radio" class="radio-calc" id="radio-water-yes" value="7" name="install-water">
+                        <input type="radio" class="radio-calc" id="radio-water-yes" value="500">
                         <label for="radio-water-yes">ДА</label>
                         <input type="radio" class="radio-calc set-no" id="radio-water-no" value="0"
                             name='install-water'>
-                        <label for="radio-water-no">Нет</label>
+                        <label for="radio-water-no" name>Нет</label>
                     </div>
                 </div>
 
@@ -97,12 +91,10 @@
             <div class="row">
                 <div class="row-item">
                     <div class="subitem">
-                        <p class="subtitle">Замена радиаторов</p>
-                        <input type="radio" class="radio-calc" id="radio-radiator-yes" value="7"
-                            name="install-radiator">
-                        <label for="radio-radiator-yes">ДА</label>
-                        <input type="radio" class="radio-calc set-no" id="radio-radiator-no" value="0"
-                            name='install-radiator'>
+                        <p class="subtitle subtitle-radiator">Замена радиаторов</p>
+                        <input type="radio" class="radio-calc" id="radio-radiator-yes" value="100" name="install-radiator">
+                        <label for="radio-radiator-yes" >ДА</label>
+                        <input type="radio" class="radio-calc set-no" id="radio-radiator-no" value="0" name="install-radiator">
                         <label for="radio-radiator-no">Нет</label>
                     </div>
                 </div>
@@ -110,8 +102,8 @@
                 <div class="row-item">
                     <div class="subitem">
                         <p class="subtitle">Установка дверей</p>
-                        <input type="radio" class="radio-calc" id="radio-doors-yes" value="7" name="install-doors">
-                        <label for="radio-doors-yes">ДА</label>
+                        <input type="radio" class="radio-calc" id="radio-doors-yes" value="250" name="install-doors">
+                        <label for="radio-doors-yes" > ДА</label>
                         <input type="radio" class="radio-calc set-no" id="radio-doors-no" value="0"
                             name='install-doors'>
                         <label for="radio-doors-no">Нет</label>
@@ -124,13 +116,13 @@
                     <div class="subitem">
                         <p class="subtitle">Отделка пола</p>
                         <div class="subitem-inner">
-                            <input type="checkbox" class="checkbox-calc" id="checkbox-pol-one" value="7">
+                            <input type="checkbox" class="checkbox-calc" id="checkbox-pol-one" value="390" name="option-job">
                             <label for="checkbox-pol-one">Ламинат или паркетная доска</label>
-                            <input type="checkbox" class="checkbox-calc" id="checkbox-pol-two" value="7">
+                            <input type="checkbox" class="checkbox-calc" id="checkbox-pol-two" value="600" name="option-job">
                             <label for="checkbox-pol-two">Массивная доска</label>
-                            <input type="checkbox" class="checkbox-calc" id="checkbox-pol-three" value="7">
+                            <input type="checkbox" class="checkbox-calc" id="checkbox-pol-three" value="700" name="option-job">
                             <label for="checkbox-pol-three">Штучный паркет</label>
-                            <input type="checkbox" class="checkbox-calc" id="checkbox-pol-four" value="7">
+                            <input type="checkbox" class="checkbox-calc" id="checkbox-pol-four" value="800" name="option-job"> 
                             <label for="checkbox-pol-four">Плитка</label>
                         </div>
                     </div>
@@ -140,18 +132,18 @@
                     <div class="subitem">
                         <p class="subtitle">Отделка стен</p>
                         <div class="subitem-inner">
-                            <input type="checkbox" class="checkbox-calc" id="checkbox-sten-one" value="7">
+                            <input type="checkbox" class="checkbox-calc" id="checkbox-sten-one" value="900" name="option-job">
                             <label for="checkbox-sten-one">Обои(флизелин/винил)</label>
-                            <input type="checkbox" class="checkbox-calc" id="checkbox-sten-two" value="7">
+                            <input type="checkbox" class="checkbox-calc" id="checkbox-sten-two" value="1500" name="option-job">
                             <label for="checkbox-sten-two">Обои бумажные</label>
-                            <input type="checkbox" class="checkbox-calc" id="checkbox-sten-three" value="7">
+                            <input type="checkbox" class="checkbox-calc" id="checkbox-sten-three" value="1400" name="option-job">
                             <label for="checkbox-sten-three">Обои под окрас</label>
-                            <input type="checkbox" class="checkbox-calc" id="checkbox-sten-four" value="7">
+                            <input type="checkbox" class="checkbox-calc" id="checkbox-sten-four" value="2600" name="option-job">
                             <label for="checkbox-sten-four">Окрас стен</label>
-                            <input type="checkbox" class="checkbox-calc" id="checkbox-sten-five" value="7">
+                            <input type="checkbox" class="checkbox-calc" id="checkbox-sten-five" value="3300" name="option-job">
                             <label for="checkbox-sten-five">Декоративные покрытия (декоративная штукатурка, венецианская
                                 штукатурка, прочее)</label>
-                            <input type="checkbox" class="checkbox-calc" id="checkbox-sten-six" value="7">
+                            <input type="checkbox" class="checkbox-calc" id="checkbox-sten-six" value="350" name="option-job">
                             <label for="checkbox-sten-six">Керамическая плитка или декоративный камень</label>
                         </div>
                     </div>
@@ -161,14 +153,14 @@
                     <div class="subitem">
                         <p class="subtitle">Отделка пола</p>
                         <div class="subitem-inner">
-                            <input type="checkbox" class="checkbox-calc" id="checkbox-pol-one" value="7">
-                            <label for="checkbox-pol-one">Ламинат или паркетная доска</label>
-                            <input type="checkbox" class="checkbox-calc" id="checkbox-pol-two" value="7">
-                            <label for="checkbox-pol-two">Массивная доска</label>
-                            <input type="checkbox" class="checkbox-calc" id="checkbox-pol-three" value="7">
-                            <label for="checkbox-pol-three">Штучный паркет</label>
-                            <input type="checkbox" class="checkbox-calc" id="checkbox-pol-four" value="7">
-                            <label for="checkbox-pol-four">Плитка</label>
+                            <input type="checkbox" class="checkbox-calc" id="checkbox-pot-one" value="1200" name="option-job">
+                            <label for="checkbox-pot-one">Окрас оштукатуренных потолков</label>
+                            <input type="checkbox" class="checkbox-calc" id="checkbox-pot-two" value="1400" name="option-job">
+                            <label for="checkbox-pot-two">Окрас одноуровневых гипсокартонных потолков</label>
+                            <input type="checkbox" class="checkbox-calc" id="checkbox-pot-three" value="1500" name="option-job">
+                            <label for="checkbox-pot-three">Окрас многоуровневых гипсокартонных потолков</label>
+                            <input type="checkbox" class="checkbox-calc" id="checkbox-pot-four" value="450" name="option-job">
+                            <label for="checkbox-pot-four">Натяжные потолки</label>
                         </div>
                     </div>
                 </div>
