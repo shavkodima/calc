@@ -17,7 +17,7 @@
                 <div class="row-item">
                     <div class="subitem">
                         <p class="subtitle">Тип Объекта</p>
-                        <input type="radio" class="radio-calc" id="radio-kv" value="2150" name="type-house" >
+                        <input type="radio" class="radio-calc set-activ-type" id="radio-kv" value="2150" name="type-house" >
                         <label for="radio-kv">Квартира</label>
                         <input type="radio" class="radio-calc set-tanhaus" id="radio-tanhaus" value="2200" name='type-house'>
                         <label for="radio-tanhaus">Коттедж/Таунхаус</label>
@@ -29,7 +29,7 @@
                         <p class="subtitle">Вид Объекта</p>
                         <input type="radio" class="radio-calc" id="radio-view" value="500" name='view-house'>
                         <label for="radio-view">Вторичное жилье</label>
-                        <input type="radio" class="radio-calc" id="radio-view-new" value="0" name='view-house'>
+                        <input type="radio" class="radio-calc set-activ-view" id="radio-view-new" value="0" name='view-house'>
                         <label for="radio-view-new">Новостройка</label>
                     </div>
                 </div>
@@ -52,8 +52,8 @@
                 <div class="row-item">
                     <div class="subitem">
                         <p class="subtitle">Высота потолка(м)</p>
-                        <input type="number" class="input-job input-height-value" step="0.01" value="" placeholder="Ваша ваша высота потолка" >
-                        <input type="range" min="0" max="15" class="range-calc range-height" id="range-area" step="0.01" value="0"
+                        <input type="number" class="input-job input-height-value" step="0.1" value="2.7" placeholder="Ваша ваша высота потолка" >
+                        <input type="range" min="2.7" max="15" class="range-calc range-height-value" id="range-area" step="0.1" value="2.7"
                             >
                     </div>
                 </div>
@@ -71,7 +71,7 @@
                         <p class="subtitle">Монтаж электропроводки </p>
                         <input type="radio" class="radio-calc" id="radio-electrick-yes" value="1500"  name="install-electrick">
                         <label for="radio-electrick-yes" >ДА</label>
-                        <input type="radio" class="radio-calc set-no" id="radio-electrick-no" value="0" name='install-electrick'>
+                        <input type="radio" class="radio-calc set-no set-activ-elecktrick" id="radio-electrick-no" value="0" name='install-electrick'>
                         <label for="radio-electrick-no">Нет</label>
                     </div>
                 </div>
@@ -79,11 +79,11 @@
                 <div class="row-item">
                     <div class="subitem">
                         <p class="subtitle">Монтаж системы водоснабжения и канализации</p>
-                        <input type="radio" class="radio-calc" id="radio-water-yes" value="500">
+                        <input type="radio" class="radio-calc" id="radio-water-yes" value="500" name='install-water'>
                         <label for="radio-water-yes">ДА</label>
-                        <input type="radio" class="radio-calc set-no" id="radio-water-no" value="0"
+                        <input type="radio" class="radio-calc set-activ-water" id="radio-water-no" value="0"
                             name='install-water'>
-                        <label for="radio-water-no" name>Нет</label>
+                        <label for="radio-water-no" >Нет</label>
                     </div>
                 </div>
 
@@ -94,7 +94,7 @@
                         <p class="subtitle subtitle-radiator">Замена радиаторов</p>
                         <input type="radio" class="radio-calc" id="radio-radiator-yes" value="100" name="install-radiator">
                         <label for="radio-radiator-yes" >ДА</label>
-                        <input type="radio" class="radio-calc set-no" id="radio-radiator-no" value="0" name="install-radiator">
+                        <input type="radio" class="radio-calc set-activ-radiator" id="radio-radiator-no" value="0" name="install-radiator">
                         <label for="radio-radiator-no">Нет</label>
                     </div>
                 </div>
@@ -104,7 +104,7 @@
                         <p class="subtitle">Установка дверей</p>
                         <input type="radio" class="radio-calc" id="radio-doors-yes" value="250" name="install-doors">
                         <label for="radio-doors-yes" > ДА</label>
-                        <input type="radio" class="radio-calc set-no" id="radio-doors-no" value="0"
+                        <input type="radio" class="radio-calc set-activ-doors" id="radio-doors-no" value="0"
                             name='install-doors'>
                         <label for="radio-doors-no">Нет</label>
                     </div>

@@ -1,32 +1,77 @@
-var btn = document.querySelectorAll('.subitem');
+var btnInput = document.querySelector('.input-area-value');
+var btnInputHeight = document.querySelector('.input-height-value');
+var btnOld = document.querySelectorAll('.subitem');
+var btnRange = document.querySelector('.range-area');
+var btnRangeHeight = document.querySelector('.range-height-value');
 var out = document.querySelector('.calc-item-coast');
 var inputAre = document.querySelector('.input-area-value');
 var optionValue = 0;
-var allValue = {};
-var settingHouse = {};
 
-inputAre.addEventListener('input', function(event){
-    var target = event.target;
-    settingHouse.area = target.value;
-    outResult();
+var settingHouse = {
+    area: 0,
+    electrick:0,
+    radiator:0,
+    water:0,
+    doors:0,
+    option:0
+};
+var optionHouse = {};
+
+window.onload = function(event){
+    var activRadionType = document.querySelector('.set-activ-type');
+    var activRadionView = document.querySelector('.set-activ-view');
+    var activRadionElektrick= document.querySelector('.set-activ-elecktrick');
+    var activRadionRadiator= document.querySelector('.set-activ-radiator');
+    var activRadionWater= document.querySelector('.set-activ-water');
+    var activRadionDoors= document.querySelector('.set-activ-doors');
+    activRadionType.checked = true;
+    activRadionView.checked = true;
+    activRadionElektrick.checked = true;
+    activRadionWater.checked = true;
+    activRadionRadiator.checked = true;
+    activRadionDoors.checked = true;
+    settingHouse.type = this.parseFloat(activRadionType.value);
+    settingHouse.view = this.parseFloat(activRadionView.value);
+}
+
+
+btnInput.addEventListener('input', function(){
+    btnInput.value = this.value;
+    settingHouse.area = parseFloat(this.value);
+    if(this.value == ''){
+        settingHouse.area = 0;
+    }
+    outp();
+})
+btnInputHeight.addEventListener('input', function(){
+    btnRangeHeight.value = this.value;
+    settingHouse.height = 1 + 0.04*Math.abs(parseFloat(this.value) - 2.7)/0.1;
+    outp();
+})
+
+
+btnRange.addEventListener('input', function(){
+    btnInput.value = this.value;
+    settingHouse.area = parseFloat(this.value);
+    outp();
+})
+btnRangeHeight.addEventListener('input', function(){
+    btnInputHeight.value = this.value;
+    settingHouse.height = 1 + 0.04*Math.abs(parseFloat(this.value) - 2.7)/0.1;
+    outp();
 })
 
 function setBtn() {
-    for (var i = 0; i < btn.length; i++) {
-        btn[i].addEventListener('click', function (event) {
+    for (var i = 0; i < btnOld.length; i++) {
+        btnOld[i].addEventListener('click', function (event) {
             var target = event.target;
             var setAtrib = target.getAttribute('name');
             setValue(setAtrib);
-            outResult();
-        });
-
+           });
     }
 }
+setBtn();
 
-function setArea(e) {
-    var s = e.value;
-    return s;
-}
 
 function setValue(valueAtrib) {
     switch (valueAtrib) {
@@ -48,45 +93,45 @@ function setValue(valueAtrib) {
             case 'install-radiator':
             installRadiator(event);
             break;
+            case 'install-water':
+                installWater(event);
+                break;
 }
-}
-function typeHouse(event) {
-    var target = event.target;
-    var radiator = document.getElementById('radio-radiator-yes');
-    var radiatorTitle = document.querySelector('.subtitle-radiator');
-    if (target.className == 'radio-calc set-tanhaus') {
-        radiatorTitle.innerHTML = "Монтаж системы отопления";
-        radiator.checked = false;
-        radiator.setAttribute('value', '1000');
-        allValue.radiator = '0';
-    } else {
-        radiatorTitle.innerHTML = "Замена радиаторов";
-        radiator.checked = false;
-        radiator.setAttribute('value', '100');
-        allValue.radiator = '0';
-    }
-    allValue.type = target.value;
 }
 
+function typeHouse(event) {
+    var target = event.target; 
+    if(target.checked){
+       settingHouse.type = parseFloat(target.value);
+    }
+    outp()
+}
 function viewHouse(event) {
-    var target = event.target;
-    allValue.view = target.value;
-    return;
+    var target = event.target; 
+       settingHouse.view = parseFloat(target.value);
+       outp()
 }
 function installElectrick(event) {
-    var target = event.target;
-    allValue.electrick = target.value;
-    return;
+    var target = event.target; 
+       settingHouse.electrick = parseFloat(target.value);
+       outp()
 }
-function installDoors(event) {
-    var target = event.target;
-    allValue.doors = target.value;
-    return;
-}
+
 function installRadiator(event) {
-    var target = event.target;
-    allValue.radiator = target.value;
-    return;
+    var target = event.target; 
+       settingHouse.radiator = parseFloat(target.value);
+       outp()
+}
+function installWater(event) {
+    var target = event.target; 
+       settingHouse.water = parseFloat(target.value);
+       outp()
+}
+
+function installDoors(event) {
+    var target = event.target; 
+       settingHouse.doors = parseFloat(target.value);
+       outp()
 }
 
 function optionJob(event) {
@@ -96,18 +141,16 @@ function optionJob(event) {
     } else {
         optionValue -= target.value
     }
-    allValue.option = optionValue;
-    return;
+    settingHouse.option = optionValue;
+    outp()
+}
+function outp(){
+
+    out.innerHTML =  Math.round((settingHouse.view + 
+        settingHouse.type + 
+        settingHouse.electrick + 
+        settingHouse.radiator+
+        settingHouse.water+
+        settingHouse.doors + settingHouse.option) * settingHouse.area *settingHouse.height) + ' руб.';
 }
 
-
-
-
-function outResult() {
-    var result = 0;
-    for (var key in allValue) {
-        result += parseFloat(allValue[key]);
-    }
-    out.innerHTML =  result *settingHouse.area  + ' руб. ';
-}
-setBtn();
